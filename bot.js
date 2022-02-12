@@ -1,9 +1,11 @@
 console.log('beep beep');
 
+require('dotenv').config();
 const Discord = require('discord.js');
 const { Client, Intents } = require('discord.js');
+
 const client = new Client({ intents: ['GUILDS', 'GUILD_MESSAGES'] });
-client.login('OTQxMjExMzMwMTY4MzY5MTYy.YgSpWw.ZzN3cLzKgKA_r0OfCvW4Cf2htTs');
+client.login(process.env.BOTTOKEN);
 
 client.on('ready', readyDiscord);
 
