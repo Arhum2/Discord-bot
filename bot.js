@@ -4,7 +4,6 @@ require('dotenv').config();
 
 const fetch = import('node-fetch');
 const { Client, Intents } = require('discord.js');
-
 const client = new Client({ intents: ['GUILDS', 'GUILD_MESSAGES'] });
 client.login(process.env.BOTTOKEN);
 
@@ -18,7 +17,7 @@ async function gotMessage(msg) {
     } else if (msg.content == '!hero') {
         msg.channel.send('gif!');
 
-        let url = `https://best-overwatch-api.herokuapp.com/`
+        let url = `https://best-overwatch-api.herokuapp.com/player/pc/us/GamersCCCP-1569`
 
         let response = await fetch(url);
         let json = await response.json();
