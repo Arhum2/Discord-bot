@@ -1,27 +1,25 @@
-console.log('beep beep');
+console.log('Online');
 
 require('dotenv').config();
 
-const fetch = import('node-fetch');
-const { Client, Intents } = require('discord.js');
+const axios = require('axios')
+const { Client, Intents, Message } = require('discord.js');
 const client = new Client({ intents: ['GUILDS', 'GUILD_MESSAGES'] });
 client.login(process.env.BOTTOKEN);
 
 
-client.on('message', gotMessage);
+client.on('messageCreate', gotMessage);
 
 async function gotMessage(msg) {
-    console.log(msg.content);
-    if (msg.content === 'choo choo') {
-        msg.reply("Train");
-    } else if (msg.content == '!hero') {
-        msg.channel.send('listening!');
-
-        let url = `https://best-overwatch-api.herokuapp.com/player/{PLATFORM}/{REGION)/{TAG}`
-
-        let response = await fetch(url);
-        let json = await response.json();
-        console.log(json);
-
+    console.log(msg.content)
+    if (msg.content === '!stats') {
+        axios.get('https://best-overwatch-api.herokuapp.com/player/pc/us/JustArhum-1494')
+            .then((res) => {
+                console.log('RES:', res)
+                msg.reply("liestening")
+            })
+            .catch((err) => {
+            console.log("ERR:", err)
+            })
     }
 }
