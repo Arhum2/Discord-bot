@@ -15,9 +15,9 @@ async function gotMessage(msg) {
     if (msg.content === 'choo choo') {
         msg.reply("Train");
     } else if (msg.content == '!hero') {
-        msg.channel.send('gif!');
+        msg.channel.send('listening!');
 
-        let url = `https://best-overwatch-api.herokuapp.com/player/pc/us/GamersCCCP-1569`
+        let url = `https://best-overwatch-api.herokuapp.com/player/{PLATFORM}/{REGION)/{TAG}`
 
         let response = await fetch(url);
         let json = await response.json();
