@@ -13,10 +13,16 @@ client.on('messageCreate', gotMessage);
 async function gotMessage(msg) {
     console.log(msg.content)
     if (msg.content === '!stats') {
-        axios.get('https://best-overwatch-api.herokuapp.com/player/pc/us/JustArhum-1494')
+        axios.get('https://best-overwatch-api.herokuapp.com/player/pc/us/xxxxxxxx-1494')
+        
             .then((res) => {
-                console.log('RES:', res)
-                msg.reply("liestening")
+                msg.reply('working')
+                var stringify = (JSON.stringify(res));
+                var parseData = JSON.parse(stringify);
+                console.log('stringify:', stringify);
+                console.log('parseData:', parseData);
+                console.log(parseData.username);
+
             })
             .catch((err) => {
             console.log("ERR:", err)
