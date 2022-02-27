@@ -13,7 +13,13 @@ client.on('messageCreate', gotMessage);
 async function gotMessage(msg) {
     console.log(msg.content)
     if (msg.content === '!stats') {
-        axios.get('https://best-overwatch-api.herokuapp.com/player/pc/us/JustArhum-1494')
+        let url = "https://best-overwatch-api.herokuapp.com/";
+        let platform = "1";
+        let region = "2";
+        let tag = "JustArhum-1494";
+        let result = url.concat(platform, region, tag)
+        console.log(result)
+        axios.get(result)
         
             .then((res) => {
                 msg.reply('working')
