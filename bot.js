@@ -12,13 +12,22 @@ client.on('messageCreate', gotMessage);
 
 async function gotMessage(msg) {
     console.log(msg.content)
-    if (msg.content === '!stats') {
-        let url = "https://best-overwatch-api.herokuapp.com/";
-        let platform = "1";
-        let region = "2";
-        let tag = "JustArhum-1494";
-        let result = url.concat(platform, region, tag)
-        console.log(result)
+    if (msg.content.startsWith('!stats')) {
+        //taking user input and concatinating it with the API base url to feth stats
+        let url = "https://best-overwatch-api.herokuapp.com/player/";
+
+        let text = msg.content
+        //console.log('TEXT:', text)
+        
+        let str = text.replace("!stats", "")
+        //console.log('STR:', str)
+
+        playerDetails = str.trim()
+        //console.log('PLAYERDETAILS:', playerDetails)
+        
+        let result = url.concat(playerDetails)
+        //console.log('RESULT:', result)
+        
         axios.get(result)
         
             .then((res) => {
