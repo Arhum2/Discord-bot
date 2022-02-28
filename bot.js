@@ -33,12 +33,39 @@ async function gotMessage(msg) {
       .then((res) => {
         var stringify = JSON.stringify(res.data);
         var parseData = JSON.parse(stringify);
-        console.log("stringify:", stringify);
-        console.log("parseData:", parseData);
-        console.log(parseData.username);
+        //console.log("stringify:", stringify);
+        //console.log("parseData:", parseData);
+        //console.log(parseData.username);
+        //endorsement = JSON.stringify(parseData.endorsement)
+        //console.log("ENDORSEMENT:", endorsement);
+
+        S = parseData.endorsement.sportsmanship["rate"]
+        //console.log("SPORTSMANSHIP:", S);
+
+        SC = parseData.endorsement.shotcaller["rate"]
+        //console.log("SHOTCALLER:", SC);
+
+        T = parseData.endorsement.teammate["rate"]
+        //console.log("TEAMMATE:", T);
+
+        var endorsementLevel
+        if (S > SC) {
+            endorsementLevel = ("Sportsmanship")
+            rate = S
+        } else if (SC > T) {
+            endorsementLevel = ("Shot Caller")
+            rate = SC
+        } else {
+            endorsementLevel = ("Team mate")
+            rate = T
+        }
+
+
         msg.reply(`
+        Your stats....
         Level: ${parseData.level} 
         Username: ${parseData.username}
+        Endorsement: ${endorsementLevel}: ${rate}/100
         `)
       })
 
