@@ -47,6 +47,12 @@ async function gotMessage(msg) {
         T = parseData.endorsement.teammate["rate"]
         //console.log("TEAMMATE:", T);
 
+        var endorsementlvl = parseData.endorsement.level
+        if (endorsementlvl === null) {
+            console.log("User endorsement level = null")
+            endorsementlvl = ":"            
+        } 
+        
         var endorsementLevel
         if (S > SC) {
             endorsementLevel = ("Sportsmanship")
@@ -63,9 +69,9 @@ async function gotMessage(msg) {
         //Replying with stats
         msg.reply(`
         Your stats....
+        Username: ${parseData.username}        
         Level: ${parseData.level} 
-        Username: ${parseData.username}
-        Endorsement: ${endorsementLevel}: ${rate}/100
+        Endorsement level${endorsementlvl}: ${endorsementLevel} (${rate/100*100}%)
         `)
       })
 
