@@ -51,7 +51,9 @@ async function gotMessage(msg) {
         if (endorsementlvl === null) {
             console.log("User endorsement level = null")
             endorsementlvl = ":"            
-        } 
+        } else {
+            endorsementlvl = ` (${endorsementlvl})`
+        }
         
         var endorsementLevel
         if (S > SC) {
