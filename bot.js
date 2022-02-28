@@ -12,7 +12,7 @@ client.on("messageCreate", gotMessage);
 async function gotMessage(msg) {
   console.log(msg.content);
   if (msg.content.startsWith("!stats")) {
-    //taking user input and concatinating it with the API base url to feth stats
+    //taking user input and concatinating it with the API base url to fetch stats
     let url = "https://best-overwatch-api.herokuapp.com/player/";
 
     let text = msg.content;
@@ -39,12 +39,11 @@ async function gotMessage(msg) {
         //endorsement = JSON.stringify(parseData.endorsement)
         //console.log("ENDORSEMENT:", endorsement);
 
+        //Comparing Endorsement levels
         S = parseData.endorsement.sportsmanship["rate"]
         //console.log("SPORTSMANSHIP:", S);
-
         SC = parseData.endorsement.shotcaller["rate"]
         //console.log("SHOTCALLER:", SC);
-
         T = parseData.endorsement.teammate["rate"]
         //console.log("TEAMMATE:", T);
 
@@ -61,6 +60,7 @@ async function gotMessage(msg) {
         }
 
 
+        //Replying with stats
         msg.reply(`
         Your stats....
         Level: ${parseData.level} 
@@ -70,6 +70,7 @@ async function gotMessage(msg) {
       })
 
 
+      //Catches errors
       .catch((err) => {
         console.log("ERR:", err);
       });
