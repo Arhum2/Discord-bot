@@ -33,8 +33,8 @@ async function gotMessage(msg) {
       .then((res) => {
         var stringify = JSON.stringify(res.data);
         var parseData = JSON.parse(stringify);
-        console.log("stringify:", stringify);
-        console.log("parseData:", parseData);
+        //console.log("stringify:", stringify);
+        //console.log("parseData:", parseData);
         //console.log(parseData.username);
         //endorsement = JSON.stringify(parseData.endorsement)
         //console.log("ENDORSEMENT:", endorsement);
@@ -49,7 +49,7 @@ async function gotMessage(msg) {
 
         var endorsementlvl = parseData.endorsement.level
         if (endorsementlvl === null) {
-            console.log("User endorsement level = null")
+            //console.log("User endorsement level = null")
             endorsementlvl = ":"            
         } else {
             endorsementlvl = ` (${endorsementlvl})`
@@ -78,8 +78,18 @@ async function gotMessage(msg) {
         Endorsement level${endorsementlvl}: ${endorsementLevel} (${rate/100*100}%)
 
         Quick play stats
+        Playtime: ${parseData.playtime.quickplay}
         Games: ${played} 
-        Won: ${won} (${Math.trunc(won/played*100)}% win rate)
+        Wins: ${won} (${Math.trunc(won/played*100)}% win rate)
+
+        Competitive play stats
+        Playtime: ${parseData.playtime.competitive}
+        Games: ${parseData.games.competitive.played}
+        Wins: ${parseData.games.competitive.won}
+        Draws: ${parseData.games.competitive.draw}
+        Lost: ${parseData.games.competitive.lost}
+        Win rate: ${parseData.games.competitive.win_rate}
+        
         `)
       })
 
