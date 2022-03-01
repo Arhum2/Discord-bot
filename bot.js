@@ -33,8 +33,8 @@ async function gotMessage(msg) {
       .then((res) => {
         var stringify = JSON.stringify(res.data);
         var parseData = JSON.parse(stringify);
-        //console.log("stringify:", stringify);
-        //console.log("parseData:", parseData);
+        console.log("stringify:", stringify);
+        console.log("parseData:", parseData);
         //console.log(parseData.username);
         //endorsement = JSON.stringify(parseData.endorsement)
         //console.log("ENDORSEMENT:", endorsement);
@@ -67,13 +67,19 @@ async function gotMessage(msg) {
             rate = T
         }
 
+        played = parseData.games.quickplay.played
+        won = parseData.games.quickplay.won
 
         //Replying with stats
         msg.reply(`
-        Your stats....
+        ${parseData.username}'s stats....
         Username: ${parseData.username}        
         Level: ${parseData.level} 
         Endorsement level${endorsementlvl}: ${endorsementLevel} (${rate/100*100}%)
+
+        Quick play stats
+        Games: ${played} 
+        Won: ${won} (${Math.trunc(won/played*100)}% win rate)
         `)
       })
 
