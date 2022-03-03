@@ -1,7 +1,7 @@
 console.log("Online");
 
 require("dotenv").config();
-
+const { MessageEmbed } = require('discord.js');
 const axios = require("axios");
 const { Client, Intents, Message } = require("discord.js");
 const client = new Client({ intents: ["GUILDS", "GUILD_MESSAGES"] });
@@ -69,10 +69,12 @@ async function gotMessage(msg) {
 
         played = parseData.games.quickplay.played
         won = parseData.games.quickplay.won
+        console.log("PORTRAIT:", parseData.portrait)
 
         //Replying with stats
         msg.reply(`
         ${parseData.username}'s stats....
+        ${parseData.portrait}
         Username: ${parseData.username}        
         Level: ${parseData.level} 
         Endorsement level${endorsementlvl}: ${endorsementLevel} (${rate/100*100}%)
@@ -84,11 +86,13 @@ async function gotMessage(msg) {
 
         Competitive play stats
         Playtime: ${parseData.playtime.competitive}
+        Rank: ${parseData.competitive.rank}
         Games: ${parseData.games.competitive.played}
         Wins: ${parseData.games.competitive.won}
         Draws: ${parseData.games.competitive.draw}
         Lost: ${parseData.games.competitive.lost}
         Win rate: ${parseData.games.competitive.win_rate}
+        rank img: ${parseData.competitive.rank_img}
         
         `)
       })
