@@ -97,6 +97,14 @@ async function gotMessage(msg) {
         `)
       })
 
+      const exampleEmbed = new MessageEmbed()
+        .setColor('f17909')
+        .setTitle('testing embed')
+
+      msg.reply({ embeds: [exampleEmbed] })
+
+
+
 
       //Catches errors
       .catch((err) => {
