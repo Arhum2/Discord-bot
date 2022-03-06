@@ -69,9 +69,31 @@ async function gotMessage(msg) {
 
         played = parseData.games.quickplay.played;
         won = parseData.games.quickplay.won;
-        console.log("PORTRAIT:", parseData.portrait);
 
-        // //Replying with stats
+        rate_percent = rate/100*100
+        portrait = parseData.portrait;
+        username = parseData.username;
+        level = parseData.level;
+        compRank = parseData.competitive.rank;
+
+        const exampleEmbed = new MessageEmbed()
+          .setColor("f17909")
+          .setTitle(`Here are ${username}'s stats!`)
+          .setThumbnail(`${portrait}`)
+          .addFields(
+            { name: "Endorsement level ", value: `${endorsementLevel} (${rate_percent}%)` },
+            { name: "\u200B", value: "\u200B" },
+            { name: "Username", value: `${username}`, inline: true },
+            { name: "Level", value: `${level}`, inline: true },
+            { name: "Competitive rank", value: `${compRank}`, inline: true }
+          );
+
+        msg.reply({ embeds: [exampleEmbed] });
+
+
+
+
+                // //Replying with stats
         // msg.reply(`
         // ${parseData.username}'s stats....
         // ${parseData.portrait}
@@ -97,16 +119,6 @@ async function gotMessage(msg) {
         // rank img: ${parseData.competitive.rank_img}
 
         // `);
-
-        portrait = parseData.portrait;
-        username = parseData.username;
-
-        const exampleEmbed = new MessageEmbed()
-          .setColor("f17909")
-          .setTitle(`Here are ${username}'s stats!`)
-          .setThumbnail(`${portrait}`);
-
-        msg.reply({ embeds: [exampleEmbed] });
       })
 
       //Catches errors
