@@ -118,8 +118,8 @@ async function gotMessage(msg) {
             { name: "Losses", value: `${compLost}`, inline: true},
           )
           .setImage(rankImg)
-          .setImage(lvlFrame)
-          .setImage(star)
+          //.setImage(lvlFrame)
+          //.setImage(star)
 
         msg.reply({ embeds: [statsEmbed] });
 
