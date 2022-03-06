@@ -55,12 +55,12 @@ async function gotMessage(msg) {
           endorsementlvl = ` (${endorsementlvl})`;
         }
 
-        var compRank = parseData.competitive.rank;
-        if (compRank === null) {
+        var rank = parseData.competitive.rank;
+        if (rank === null) {
           //console.log("User endorsement level = null")
-          compRank = "Rank not found";
+          rank = "Rank not found";
         } else {
-          endorsementlvl = ` (${endorsementlvl})`;
+          rank = `(${rank})`;
         }
 
         var endorsementLevel;
@@ -85,6 +85,14 @@ async function gotMessage(msg) {
 
         playtime = parseData.playtime.quickplay;
 
+        compPlayTime = parseData.playtime.competitive
+        compPlayed = parseData.games.competitive.played
+        compWin = parseData.games.competitive.won
+        compDraw = parseData.games.competitive.draw
+        compLost = parseData.games.competitive.lost
+        winRate = parseData.games.competitive.win_rate
+        rankImg = parseData.competitive.rank_img
+
         const statsEmbed = new MessageEmbed()
           .setColor("f17909")
           .setTitle(`Here are ${username}'s stats!`)
@@ -94,11 +102,20 @@ async function gotMessage(msg) {
             { name: "\u200B", value: "\u200B" },
             { name: "Username", value: `${username}`, inline: true },
             { name: "Level", value: `${level}`, inline: true },
-            { name: "Competitive rank", value: `${compRank}`, inline: true },
+            { name: "Competitive rank", value: `${rank}`, inline: true },
             { name: "\u200B", value: "\u200B" },
-            { name: "playtime", value: `${playtime}`, inline: true },
+            { name: "Quickplay playtime", value: `${playtime}`, inline: true },
             { name: "Games played", value: `${played}`, inline: true},
-            { name: "Wins", value: `${won} (${Math.trunc((won / played) * 100)}% win rate)`}
+            { name: "Wins", value: `${won} (${Math.trunc((won / played) * 100)}% win rate)`},
+            { name: "\u200B", value: "\u200B" },
+            { name: "Competitive playtime", value: `${compPlayTime}`, inline: true},
+            { name: "Rank", value: `${rank}`, inline: true},
+            { name: "Games played", value: `${compPlayed}`, inline: true},
+            { name: `Wins (${winRate} win rate)`, value: `${compWin}`, inline: true},
+            { name: "Draws", value: `${compDraw}`, inline: true},
+            { name: "Losses", value: `${compLost}`, inline: true},
+
+
           );
 
         msg.reply({ embeds: [statsEmbed] });
