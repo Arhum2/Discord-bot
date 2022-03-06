@@ -92,6 +92,8 @@ async function gotMessage(msg) {
         compLost = parseData.games.competitive.lost
         winRate = parseData.games.competitive.win_rate
         rankImg = parseData.competitive.rank_img
+        lvlFrame = parseData.lvlFrame
+        star = parseData.star
 
         const statsEmbed = new MessageEmbed()
           .setColor("f17909")
@@ -114,9 +116,10 @@ async function gotMessage(msg) {
             { name: `Wins (${winRate} win rate)`, value: `${compWin}`, inline: true},
             { name: "Draws", value: `${compDraw}`, inline: true},
             { name: "Losses", value: `${compLost}`, inline: true},
-
-
-          );
+          )
+          .setImage(rankImg)
+          .setImage(lvlFrame)
+          .setImage(star)
 
         msg.reply({ embeds: [statsEmbed] });
 
