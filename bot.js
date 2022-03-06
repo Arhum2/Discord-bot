@@ -50,7 +50,15 @@ async function gotMessage(msg) {
         var endorsementlvl = parseData.endorsement.level;
         if (endorsementlvl === null) {
           //console.log("User endorsement level = null")
-          endorsementlvl = ":";
+          endorsementlvl = "level not found";
+        } else {
+          endorsementlvl = ` (${endorsementlvl})`;
+        }
+
+        var compRank = parseData.competitive.rank;
+        if (compRank === null) {
+          //console.log("User endorsement level = null")
+          compRank = "Rank not found";
         } else {
           endorsementlvl = ` (${endorsementlvl})`;
         }
@@ -70,30 +78,32 @@ async function gotMessage(msg) {
         played = parseData.games.quickplay.played;
         won = parseData.games.quickplay.won;
 
-        rate_percent = rate/100*100
+        rate_percent = (rate / 100) * 100;
         portrait = parseData.portrait;
         username = parseData.username;
         level = parseData.level;
-        compRank = parseData.competitive.rank;
 
-        const exampleEmbed = new MessageEmbed()
+        playtime = parseData.playtime.quickplay;
+
+        const statsEmbed = new MessageEmbed()
           .setColor("f17909")
           .setTitle(`Here are ${username}'s stats!`)
           .setThumbnail(`${portrait}`)
           .addFields(
-            { name: "Endorsement level ", value: `${endorsementLevel} (${rate_percent}%)` },
+            { name: `Endorsement level (${endorsementlvl})`, value: `${endorsementLevel} (${rate_percent}%)`},
             { name: "\u200B", value: "\u200B" },
             { name: "Username", value: `${username}`, inline: true },
             { name: "Level", value: `${level}`, inline: true },
-            { name: "Competitive rank", value: `${compRank}`, inline: true }
+            { name: "Competitive rank", value: `${compRank}`, inline: true },
+            { name: "\u200B", value: "\u200B" },
+            { name: "playtime", value: `${playtime}`, inline: true },
+            { name: "Games played", value: `${played}`, inline: true},
+            { name: "Wins", value: `${won} (${Math.trunc((won / played) * 100)}% win rate)`}
           );
 
-        msg.reply({ embeds: [exampleEmbed] });
+        msg.reply({ embeds: [statsEmbed] });
 
-
-
-
-                // //Replying with stats
+        // //Replying with stats
         // msg.reply(`
         // ${parseData.username}'s stats....
         // ${parseData.portrait}
