@@ -1,7 +1,7 @@
 console.log("Online");
 
 require("dotenv").config();
-const { MessageEmbed } = require('discord.js');
+const { MessageEmbed } = require("discord.js");
 const axios = require("axios");
 const { Client, Intents, Message } = require("discord.js");
 const client = new Client({ intents: ["GUILDS", "GUILD_MESSAGES"] });
@@ -40,71 +40,74 @@ async function gotMessage(msg) {
         //console.log("ENDORSEMENT:", endorsement);
 
         //Comparing Endorsement levels
-        S = parseData.endorsement.sportsmanship["rate"]
+        S = parseData.endorsement.sportsmanship["rate"];
         //console.log("SPORTSMANSHIP:", S);
-        SC = parseData.endorsement.shotcaller["rate"]
+        SC = parseData.endorsement.shotcaller["rate"];
         //console.log("SHOTCALLER:", SC);
-        T = parseData.endorsement.teammate["rate"]
+        T = parseData.endorsement.teammate["rate"];
         //console.log("TEAMMATE:", T);
 
-        var endorsementlvl = parseData.endorsement.level
+        var endorsementlvl = parseData.endorsement.level;
         if (endorsementlvl === null) {
-            //console.log("User endorsement level = null")
-            endorsementlvl = ":"            
+          //console.log("User endorsement level = null")
+          endorsementlvl = ":";
         } else {
-            endorsementlvl = ` (${endorsementlvl})`
+          endorsementlvl = ` (${endorsementlvl})`;
         }
-        
-        var endorsementLevel
+
+        var endorsementLevel;
         if (S > SC) {
-            endorsementLevel = ("Sportsmanship")
-            rate = S
+          endorsementLevel = "Sportsmanship";
+          rate = S;
         } else if (SC > T) {
-            endorsementLevel = ("Shot Caller")
-            rate = SC
+          endorsementLevel = "Shot Caller";
+          rate = SC;
         } else {
-            endorsementLevel = ("Team mate")
-            rate = T
+          endorsementLevel = "Team mate";
+          rate = T;
         }
 
-        played = parseData.games.quickplay.played
-        won = parseData.games.quickplay.won
-        console.log("PORTRAIT:", parseData.portrait)
+        played = parseData.games.quickplay.played;
+        won = parseData.games.quickplay.won;
+        console.log("PORTRAIT:", parseData.portrait);
 
-        //Replying with stats
-        msg.reply(`
-        ${parseData.username}'s stats....
-        ${parseData.portrait}
-        Username: ${parseData.username}        
-        Level: ${parseData.level} 
-        Endorsement level${endorsementlvl}: ${endorsementLevel} (${rate/100*100}%)
+        // //Replying with stats
+        // msg.reply(`
+        // ${parseData.username}'s stats....
+        // ${parseData.portrait}
+        // Username: ${parseData.username}
+        // Level: ${parseData.level}
+        // Endorsement level${endorsementlvl}: ${endorsementLevel} (${
+        //   (rate / 100) * 100
+        // }%)
 
-        Quick play stats
-        Playtime: ${parseData.playtime.quickplay}
-        Games: ${played} 
-        Wins: ${won} (${Math.trunc(won/played*100)}% win rate)
+        // Quick play stats
+        // Playtime: ${parseData.playtime.quickplay}
+        // Games: ${played}
+        // Wins: ${won} (${Math.trunc((won / played) * 100)}% win rate)
 
-        Competitive play stats
-        Playtime: ${parseData.playtime.competitive}
-        Rank: ${parseData.competitive.rank}
-        Games: ${parseData.games.competitive.played}
-        Wins: ${parseData.games.competitive.won}
-        Draws: ${parseData.games.competitive.draw}
-        Lost: ${parseData.games.competitive.lost}
-        Win rate: ${parseData.games.competitive.win_rate}
-        rank img: ${parseData.competitive.rank_img}
-        
-        `)
+        // Competitive play stats
+        // Playtime: ${parseData.playtime.competitive}
+        // Rank: ${parseData.competitive.rank}
+        // Games: ${parseData.games.competitive.played}
+        // Wins: ${parseData.games.competitive.won}
+        // Draws: ${parseData.games.competitive.draw}
+        // Lost: ${parseData.games.competitive.lost}
+        // Win rate: ${parseData.games.competitive.win_rate}
+        // rank img: ${parseData.competitive.rank_img}
+
+        // `);
+
+        portrait = parseData.portrait;
+        username = parseData.username;
+
+        const exampleEmbed = new MessageEmbed()
+          .setColor("f17909")
+          .setTitle(`Here are ${username}'s stats!`)
+          .setThumbnail(`${portrait}`);
+
+        msg.reply({ embeds: [exampleEmbed] });
       })
-
-      const exampleEmbed = new MessageEmbed()
-        .setColor('f17909')
-        .setTitle('testing embed')
-
-      msg.reply({ embeds: [exampleEmbed] })
-
-
-
 
       //Catches errors
       .catch((err) => {
