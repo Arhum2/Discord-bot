@@ -30,8 +30,6 @@
   <p align="center">
     Overwatch stats bot is a Discord bot created using Discord.js. This bot allows users to ping it using "!stats Platform/Region/Tag" to which it will return the players stats in Overwatch.
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
-    <br />
     <br />
     <a href="https://github.com/github_username/repo_name">View Demo</a>
     ·
