@@ -105,19 +105,15 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
+To fully use the bot your Overwatch profile must be set to [Public](https://dotesports.com/overwatch/news/ow-public-private-profile-25347)
+
 1. Get the free API here [Overwatch API](https://timomak.github.io/Overwatch-API/#/)
 2. Use this link to add the bot to your server
    ```sh
    https://discord.com/api/oauth2/authorize?client_id=941211330168369162&permissions=274878024704&scope=bot
    ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+3. call the bot using 
+   `!stats PLATFORM/REGION/TAG`
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
