@@ -114,9 +114,7 @@ To fully use the bot your Overwatch profile must be set to [Public](https://dote
 1. Platform - Platform of user. pc, xbl, psn
 2. Region - Region of player. us, eu, kr, cn, global
 3. Tag - BattleTag of user. Replace # with -. If the BattleTag is GamersCCCP#1569, use GamersCCCP-1569
-
-
-3. call the bot using 
+4. Lastly call the bot using 
    `!stats PLATFORM/REGION/TAG`
 
 <p align="right">(<a href="#top">back to top</a>)</p>
