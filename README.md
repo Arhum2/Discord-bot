@@ -33,9 +33,9 @@
     <br />
     <a href="https://github.com/github_username/repo_name">View Demo</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
+    <a href="https://github.com/Arhum2/Overwatch-Stats-Bot/issues">Report Bug</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
+    <a href="https://github.com/Arhum2/Overwatch-Stats-Bot/issues">Request Feature</a>
   </p>
 </div>
 
@@ -83,6 +83,7 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 ### Built With
 
 * [Discord.js](https://discord.js.org/#/)
+* [Node.js](https://nodejs.org/en/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
