@@ -33,8 +33,8 @@ async function gotMessage(msg) {
       .then((res) => {
         var stringify = JSON.stringify(res.data);
         var parseData = JSON.parse(stringify);
-        //console.log("stringify:", stringify);
-        //console.log("parseData:", parseData);
+        console.log("stringify:", stringify);
+        console.log("parseData:", parseData);
         //console.log(parseData.username);
         //endorsement = JSON.stringify(parseData.endorsement)
         //console.log("ENDORSEMENT:", endorsement);
@@ -119,7 +119,7 @@ async function gotMessage(msg) {
           )
           .setImage(rankImg)
           //.setImage(lvlFrame)
-          //.setImage(star)
+          .setImage(star)
 
         msg.reply({ embeds: [statsEmbed] });
 
