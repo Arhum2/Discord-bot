@@ -105,7 +105,7 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
+1. Get the free API at [https://example.com](https://timomak.github.io/Overwatch-API/#/)
 2. Clone the repo
    ```sh
    git clone https://github.com/github_username/repo_name.git
@@ -146,8 +146,6 @@ See the [open issues](https://github.com/github_username/repo_name/issues) for a
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
 <!-- CONTRIBUTING -->
 ## Contributing
 
@@ -178,7 +176,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - Arhumshahazad2003@gmail.com
+Email - Arhumshahazad2003@gmail.com
 
 Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
 
