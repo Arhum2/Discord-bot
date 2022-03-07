@@ -29,7 +29,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/github_username/repo_name">
+  <a href="https://github.com/Arhum2/Overwatch-Stats-Bot">
     <img src="(https://user-images.githubusercontent.com/82200170/156949397-56c63299-e1fe-41c7-8925-fa555611625b.png" alt="Logo" width="80" height="80">
   </a>
 
