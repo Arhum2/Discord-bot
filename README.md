@@ -105,7 +105,11 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-To fully use the bot your Overwatch profile must be set to [Public](https://dotesports.com/overwatch/news/ow-public-private-profile-25347)
+To fully use the bot your Overwatch profile must be set to [Public](https://dotesports.com/overwatch/news/ow-public-private-profile-25347). To find a players stats you will need three pieces of information:
+
+Platform - Platform of user. pc, xbl, psn
+Region - Region of player. us, eu, kr, cn, global
+Tag - BattleTag of user. Replace # with -. If the BattleTag is GamersCCCP#1569, use GamersCCCP-1569
 
 1. Get the free API here [Overwatch API](https://timomak.github.io/Overwatch-API/#/)
 2. Use this link to add the bot to your server
