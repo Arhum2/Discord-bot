@@ -105,10 +105,10 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-1. Get the free API at [https://example.com](https://timomak.github.io/Overwatch-API/#/)
-2. Clone the repo
+1. Get the free API here [Overwatch API](https://timomak.github.io/Overwatch-API/#/)
+2. Use this link to add the bot to your server
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   https://discord.com/api/oauth2/authorize?client_id=941211330168369162&permissions=274878024704&scope=bot
    ```
 3. Install NPM packages
    ```sh
