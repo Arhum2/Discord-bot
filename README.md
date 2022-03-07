@@ -14,7 +14,7 @@ Discord bot built using Discord.js and Overwatch API to return a given players g
   <p align="center">
     project_description
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
+    <a href="https://user-images.githubusercontent.com/82200170/156949331-06b095fc-d361-49df-92a9-8987a3aa796e.png"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/github_username/repo_name">View Demo</a>
