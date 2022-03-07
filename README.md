@@ -25,10 +25,10 @@
     <img src="https://user-images.githubusercontent.com/82200170/156949575-5f17c7d4-c93f-4837-a4a2-adae28a15f7a.png" alt="Logo" width="512" height="381">
   </a>
 
-<h3 align="center">project_title</h3>
+<h3 align="center">Overwatch stats bot</h3>
 
   <p align="center">
-    project_description
+    Overwatch stats bot is a Discord bot created using Discord.js. This bot allows users to ping it using "!stats Platform/Region/Tag" to which it will return the players stats in Overwatch.
     <br />
     <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
     <br />
