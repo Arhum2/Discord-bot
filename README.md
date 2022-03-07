@@ -2,9 +2,6 @@
 Discord bot built using Discord.js and Overwatch API to return a given players game stats
 <div id="top"></div>
 
-[![LinkedIn][linkedin-shield]][https://www.linkedin.com/in/arhum-shahzad-4994681a3/]
-
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
