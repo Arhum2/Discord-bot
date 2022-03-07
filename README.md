@@ -84,6 +84,7 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 * [Discord.js](https://discord.js.org/#/)
 * [Node.js](https://nodejs.org/en/)
+* [Overwatch API](https://timomak.github.io/Overwatch-API/#/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -92,30 +93,29 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+Getting started with the bot is easy, all you have to do is add it to a server!
+Use this link to add the bot to your server
+   ```sh
+   https://discord.com/api/oauth2/authorize?client_id=941211330168369162&permissions=274878024704&scope=bot
+   ```
 
-### Prerequisites
+<!-- ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
 * npm
   ```sh
   npm install npm@latest -g
   ```
-
+ -->
 ### Installation
 
 To fully use the bot your Overwatch profile must be set to [Public](https://dotesports.com/overwatch/news/ow-public-private-profile-25347). To find a players stats you will need three pieces of information:
 
-Platform - Platform of user. pc, xbl, psn
-Region - Region of player. us, eu, kr, cn, global
-Tag - BattleTag of user. Replace # with -. If the BattleTag is GamersCCCP#1569, use GamersCCCP-1569
+1. Platform - Platform of user. pc, xbl, psn
+2. Region - Region of player. us, eu, kr, cn, global
+3. Tag - BattleTag of user. Replace # with -. If the BattleTag is GamersCCCP#1569, use GamersCCCP-1569
 
-1. Get the free API here [Overwatch API](https://timomak.github.io/Overwatch-API/#/)
-2. Use this link to add the bot to your server
-   ```sh
-   https://discord.com/api/oauth2/authorize?client_id=941211330168369162&permissions=274878024704&scope=bot
-   ```
+
 3. call the bot using 
    `!stats PLATFORM/REGION/TAG`
 
