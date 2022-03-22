@@ -72,7 +72,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-I created this bot aftering having loads of fun with my friends on Overwatch. It was always great to have a frindly compettion to see who had the best stats but we would have to return to the main menu and have to sift through irelevant player data to compare. Hence I created this bot that allows us to call it in our Discord channel and have all our info in a concise embeded message
+I created this bot after having loads of fun with my friends on Overwatch. It was always great to have a friendly competition to see who had the best in-game stats but we would have to return to the main menu and have to sift through irrelevant player data to compare. Hence I created this bot that allows users to call it in their desired Discord server and have all our their player data in a concise embedded message.
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
