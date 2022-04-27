@@ -123,32 +123,6 @@ async function gotMessage(msg) {
 
         msg.reply({ embeds: [statsEmbed] });
 
-        // //Replying with stats
-        // msg.reply(`
-        // ${parseData.username}'s stats....
-        // ${parseData.portrait}
-        // Username: ${parseData.username}
-        // Level: ${parseData.level}
-        // Endorsement level${endorsementlvl}: ${endorsementLevel} (${
-        //   (rate / 100) * 100
-        // }%)
-
-        // Quick play stats
-        // Playtime: ${parseData.playtime.quickplay}
-        // Games: ${played}
-        // Wins: ${won} (${Math.trunc((won / played) * 100)}% win rate)
-
-        // Competitive play stats
-        // Playtime: ${parseData.playtime.competitive}
-        // Rank: ${parseData.competitive.rank}
-        // Games: ${parseData.games.competitive.played}
-        // Wins: ${parseData.games.competitive.won}
-        // Draws: ${parseData.games.competitive.draw}
-        // Lost: ${parseData.games.competitive.lost}
-        // Win rate: ${parseData.games.competitive.win_rate}
-        // rank img: ${parseData.competitive.rank_img}
-
-        // `);
       })
 
       //Catches errors
